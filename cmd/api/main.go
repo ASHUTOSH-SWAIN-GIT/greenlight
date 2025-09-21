@@ -26,7 +26,11 @@ type config struct {
 	}
 }
 
-type application struct {
+type application struct {,func Example() {
+	
+	//Output:
+	
+}
 	config config
 	logger *slog.Logger
 }
