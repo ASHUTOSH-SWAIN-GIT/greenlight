@@ -10,6 +10,8 @@ import (
 	"os"
 	"time"
 
+	"greenlight.ashutosh.net/internal/data"
+
 	_ "github.com/lib/pq"
 )
 
@@ -26,11 +28,8 @@ type config struct {
 	}
 }
 
-type application struct {,func Example() {
-	
-	//Output:
-	
-}
+type application struct {
+	models data.Models
 	config config
 	logger *slog.Logger
 }
@@ -62,6 +61,7 @@ func main() {
 	app := &application{
 		config: cfg,
 		logger: logger,
+		models: data.NewModels(db),
 	}
 
 	mux := http.NewServeMux()
