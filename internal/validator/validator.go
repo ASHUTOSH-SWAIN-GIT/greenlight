@@ -45,3 +45,12 @@ func Unique[T comparable](values []T) bool {
 
 	return len(values) == len(uniqueValues)
 }
+
+func PermittedValue[T comparable](value T, permitted ...T) bool {
+	for _, v := range permitted {
+		if value == v {
+			return true
+		}
+	}
+	return false
+}
